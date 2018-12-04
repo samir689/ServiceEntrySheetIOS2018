@@ -6,16 +6,269 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Season1/SESTestX/SESTestX/MasterTableViewController.swift"
+            timestampString = "565624190.671463"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "requestEntities(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Season1/SESTestX/SESTestX/MasterTableViewController.swift"
+            timestampString = "565624190.671818"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "requestEntities(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Season1/SESTestX/SESTestX/MasterTableViewController.swift"
+            timestampString = "565624190.671893"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "requestEntities(completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SESDemo.MasterTableViewController.requestEntities(completionHandler: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season1/SESTestX/SESTestX/MasterTableViewController.swift"
+                  timestampString = "565621745.7696151"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "152"
+                  endingLineNumber = "152"
+                  offsetFromSymbolStart = "439">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;SESDemo.YmSesIosApprove&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SESDemo.MasterTableViewController.requestEntities(completionHandler: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season1/SESTestX/SESTestX/MasterTableViewController.swift"
+                  timestampString = "565621745.7716531"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "153"
+                  endingLineNumber = "153"
+                  offsetFromSymbolStart = "65">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SESDemo/Proxy Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+            timestampString = "565624190.6719609"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "fetchYMSESIOSAPPROVESet(matching:headers:options:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of SESDemo.YMSESAPPROVALSRVEntities.fetchYMSESIOSAPPROVESet(matching: Swift.Optional&lt;SAPOData.DataQuery&gt;, headers: Swift.Optional&lt;SAPOData.HTTPHeaders&gt;, options: Swift.Optional&lt;SAPOData.RequestOptions&gt;) throws -&gt; Swift.Array&lt;SESDemo.YmSesIosApprove&gt;"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season2/SESDemo/SESDemo/Proxy%20Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+                  timestampString = "565621745.793124"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 2 of SESDemo.YMSESAPPROVALSRVEntities.fetchYMSESIOSAPPROVESet(matching: Swift.Optional&lt;SAPOData.DataQuery&gt;, headers: Swift.Optional&lt;SAPOData.HTTPHeaders&gt;, options: Swift.Optional&lt;SAPOData.RequestOptions&gt;) throws -&gt; Swift.Array&lt;SESDemo.YmSesIosApprove&gt;"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season2/SESDemo/SESDemo/Proxy%20Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+                  timestampString = "565621745.7951781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SESDemo.YMSESAPPROVALSRVEntities.fetchYMSESIOSAPPROVESet(matching: Swift.Optional&lt;SAPOData.DataQuery&gt;, headers: Swift.Optional&lt;SAPOData.HTTPHeaders&gt;, options: Swift.Optional&lt;SAPOData.RequestOptions&gt;) throws -&gt; Swift.Array&lt;SESDemo.YmSesIosApprove&gt;"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season2/SESDemo/SESDemo/Proxy%20Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+                  timestampString = "565621745.797125"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "93">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SESDemo.YMSESAPPROVALSRVEntities.fetchYMSESIOSAPPROVESet(matching: Swift.Optional&lt;SAPOData.DataQuery&gt;, headers: Swift.Optional&lt;SAPOData.HTTPHeaders&gt;, options: Swift.Optional&lt;SAPOData.RequestOptions&gt;) throws -&gt; Swift.Array&lt;SESDemo.YmSesIosApprove&gt;"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season2/SESDemo/SESDemo/Proxy%20Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+                  timestampString = "565621745.798856"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "875">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SESDemo/AppDelegate.swift"
-            timestampString = "565615754.622805"
+            filePath = "SESDemo/Proxy Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+            timestampString = "565624190.6721981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "setRootViewController()"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "fetchYMSESIOSAPPROVESet(matching:headers:options:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of SESDemo.YMSESAPPROVALSRVEntities.fetchYMSESIOSAPPROVESet(matching: SAPOData.DataQuery, headers: Swift.Optional&lt;SAPOData.HTTPHeaders&gt;, options: Swift.Optional&lt;SAPOData.RequestOptions&gt;, completionHandler: (Swift.Optional&lt;Swift.Array&lt;SESDemo.YmSesIosApprove&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season2/SESDemo/SESDemo/Proxy%20Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+                  timestampString = "565623780.497703"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 2 of SESDemo.YMSESAPPROVALSRVEntities.fetchYMSESIOSAPPROVESet(matching: SAPOData.DataQuery, headers: Swift.Optional&lt;SAPOData.HTTPHeaders&gt;, options: Swift.Optional&lt;SAPOData.RequestOptions&gt;, completionHandler: (Swift.Optional&lt;Swift.Array&lt;SESDemo.YmSesIosApprove&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season2/SESDemo/SESDemo/Proxy%20Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+                  timestampString = "565623780.527328"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SESDemo.YMSESAPPROVALSRVEntities.fetchYMSESIOSAPPROVESet(matching: SAPOData.DataQuery, headers: Swift.Optional&lt;SAPOData.HTTPHeaders&gt;, options: Swift.Optional&lt;SAPOData.RequestOptions&gt;, completionHandler: (Swift.Optional&lt;Swift.Array&lt;SESDemo.YmSesIosApprove&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season2/SESDemo/SESDemo/Proxy%20Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+                  timestampString = "565623780.532663"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Season1/SESTestX/SESTestX/MasterTableViewController.swift"
+            timestampString = "565624190.672291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "requestEntities(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Season1/SESTestX/SESTestX/MasterTableViewController.swift"
+            timestampString = "565624190.672349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "requestEntities(completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SESDemo/Proxy Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"
+            timestampString = "565624190.672406"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "fetchYMSESIOSAPPROVESet(matching:headers:options:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +278,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SESDemo/AppDelegate.swift"
-            timestampString = "565615754.6240669"
+            filePath = "../../Season1/SESTestX/SESTestX/MasterItemsTableViewController.swift"
+            timestampString = "565624190.672467"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "downloadOfflineStore()"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "requestEntities(completionHandler:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SESDemo.MasterItemsTableViewController.requestEntities(completionHandler: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season1/SESTestX/SESTestX/MasterItemsTableViewController.swift"
+                  timestampString = "565623780.5670249"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "1012">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;SESDemo.YmSesIosApprove&gt;&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SESDemo.MasterItemsTableViewController.requestEntities(completionHandler: (Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "SESDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tamasszuhanszky/Documents/SDKTests/Season1/SESTestX/SESTestX/MasterItemsTableViewController.swift"
+                  timestampString = "565623780.570102"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
+                  offsetFromSymbolStart = "65">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,29 +326,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SESDemo/AppDelegate.swift"
-            timestampString = "565615754.6251661"
+            filePath = "../../Season1/SESTestX/SESTestX/MasterTableViewController.swift"
+            timestampString = "565624190.672671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
-            landmarkName = "openOfflineStore(onboarding:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SESDemo/AppDelegate.swift"
-            timestampString = "565615754.626152"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "setRootViewController()"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "requestEntities(completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

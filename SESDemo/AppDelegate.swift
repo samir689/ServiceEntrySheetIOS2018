@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     private let logger = Logger.shared(named: "AppDelegateLogger")
     var ymsesapprovalsrvEntities: YMSESAPPROVALSRVEntities<OfflineODataProvider>!
+    var ymsesapprovalsrvEntitiesOnline: YMSESAPPROVALSRVEntities<OnlineODataProvider>!
     private(set) var isOfflineStoreOpened = false
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -173,6 +174,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Setup an instance of delegate. See sample code below for definition of OfflineODataDelegateSample class.
         let delegate = OfflineODataDelegateSample()
         let offlineODataProvider = try! OfflineODataProvider(serviceRoot: serviceRoot, parameters: offlineParameters, sapURLSession: urlSession, delegate: delegate)
+        let onlineODataProvider = OnlineODataProvider(serviceName: "YMSESAPPROVALSRVEntities", serviceRoot: serviceRoot, sapURLSession: urlSession)
+        
         if onboarding {
             do {
                 // Although it is not the best practice, we are defining this query limit as top=20.
@@ -189,6 +192,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             }
         }
         self.ymsesapprovalsrvEntities = YMSESAPPROVALSRVEntities(provider: offlineODataProvider)
+        self.ymsesapprovalsrvEntitiesOnline = YMSESAPPROVALSRVEntities(provider: onlineODataProvider)
     }
 
     fileprivate func showOfflineODataError(_ error: OfflineODataError, message: String) {
