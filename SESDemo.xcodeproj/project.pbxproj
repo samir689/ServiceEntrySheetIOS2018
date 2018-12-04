@@ -41,7 +41,6 @@
 		759BA2701E6821A7001C32BA /* SAPFiori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759BA26F1E6821A7001C32BA /* SAPFiori.framework */; };
 		759BA2721E6821AF001C32BA /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 759BA26F1E6821A7001C32BA /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		75AC42D41DAF824D00B445FF /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */; };
-		7971E0AE21B69C6E004D2A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7971E0AC21B69C6E004D2A3F /* Main.storyboard */; };
 		7971E0B221B6C2E4004D2A3F /* CustomMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7971E0AF21B6C2E4004D2A3F /* CustomMain.storyboard */; };
 		7971E0B321B6C2E4004D2A3F /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7971E0B021B6C2E4004D2A3F /* DetailScreenViewController.swift */; };
 		7971E0B421B6C2E4004D2A3F /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7971E0B121B6C2E4004D2A3F /* DetailTableViewController.swift */; };
@@ -50,6 +49,7 @@
 		7971E0BC21B6C2FC004D2A3F /* MasterItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7971E0B821B6C2FC004D2A3F /* MasterItemTableViewCell.swift */; };
 		7971E0BD21B6C2FC004D2A3F /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7971E0B921B6C2FC004D2A3F /* MasterTableViewCell.swift */; };
 		7971E0BE21B6C2FC004D2A3F /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7971E0BA21B6C2FC004D2A3F /* MasterTableViewController.swift */; };
+		7971E0C121B6C6D8004D2A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7971E0BF21B6C6D8004D2A3F /* Main.storyboard */; };
 		7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1315B81D4B982000A5DA56 /* AppDelegate.swift */; };
 		7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1315C11D4B982000A5DA56 /* Assets.xcassets */; };
 		7A1315C51D4B982000A5DA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */; };
@@ -121,7 +121,6 @@
 		7569DA511E5C716A00C5D751 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFoundation.framework; sourceTree = "<group>"; };
 		759BA26F1E6821A7001C32BA /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFiori.framework; sourceTree = "<group>"; };
 		75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
-		7971E0AD21B69C6E004D2A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../Season1/SESTestX/SESTestX/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7971E0AF21B6C2E4004D2A3F /* CustomMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomMain.storyboard; path = SESDemo/CustomMain.storyboard; sourceTree = SOURCE_ROOT; };
 		7971E0B021B6C2E4004D2A3F /* DetailScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailScreenViewController.swift; path = SESDemo/DetailScreenViewController.swift; sourceTree = SOURCE_ROOT; };
 		7971E0B121B6C2E4004D2A3F /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailTableViewController.swift; path = SESDemo/DetailTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -130,6 +129,7 @@
 		7971E0B821B6C2FC004D2A3F /* MasterItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterItemTableViewCell.swift; path = SESDemo/MasterItemTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		7971E0B921B6C2FC004D2A3F /* MasterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterTableViewCell.swift; path = SESDemo/MasterTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		7971E0BA21B6C2FC004D2A3F /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterTableViewController.swift; path = SESDemo/MasterTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		7971E0C021B6C6D8004D2A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A1315B51D4B982000A5DA56 /* SESDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SESDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A1315B81D4B982000A5DA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A1315C11D4B982000A5DA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 				75D373EF1DD1FB0800888D4C /* Proxy Classes */,
 				755C10B41D5C63B000ECF6A2 /* Utils */,
 				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
-				7971E0AC21B69C6E004D2A3F /* Main.storyboard */,
+				7971E0BF21B6C6D8004D2A3F /* Main.storyboard */,
 				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
 				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
 				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
@@ -462,7 +462,7 @@
 				7971E0B221B6C2E4004D2A3F /* CustomMain.storyboard in Resources */,
 				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
 				F9BD6DF0145F5703ECBD6AE4 /* Notification.storyboard in Resources */,
-				7971E0AE21B69C6E004D2A3F /* Main.storyboard in Resources */,
+				7971E0C121B6C6D8004D2A3F /* Main.storyboard in Resources */,
 				33FF0732E674D27382301858 /* Subscription.storyboard in Resources */,
 				23C706616D309A155B1C6BB3 /* YmSesIosView.storyboard in Resources */,
 				9A0233425243E8450487A9A4 /* YmSesIosCreate.storyboard in Resources */,
@@ -563,10 +563,10 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
-		7971E0AC21B69C6E004D2A3F /* Main.storyboard */ = {
+		7971E0BF21B6C6D8004D2A3F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7971E0AD21B69C6E004D2A3F /* Base */,
+				7971E0C021B6C6D8004D2A3F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
