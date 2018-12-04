@@ -1,0 +1,793 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0186C856B4415F13CE8A36D6 /* SubscriptionMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2FAE0237DBA24FBC9E18E2 /* SubscriptionMasterViewController.swift */; };
+		07DEFCD8C984B6706F522259 /* YmSesIosItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC2CEAFF287F22271579366 /* YmSesIosItems.swift */; };
+		0BEFFB3CF16DB7BC9AE77355 /* YmSesIosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0516B618B5A31756711A89E /* YmSesIosView.swift */; };
+		1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */; };
+		128604DA1E55B41600C698B5 /* SAPCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128604D91E55B41600C698B5 /* SAPCommon.framework */; };
+		128604DB1E55B43B00C698B5 /* SAPCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 128604D91E55B41600C698B5 /* SAPCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		128B53061F8E667000E64DF6 /* SnapshotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128B53051F8E667000E64DF6 /* SnapshotViewController.swift */; };
+		12D066CF1F4DDB0E0075EBA4 /* ConfigurationProvider.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12D066CE1F4DDB0A0075EBA4 /* ConfigurationProvider.plist */; };
+		12E07EF21E96851800460A94 /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E07EF11E96851800460A94 /* CollectionType.swift */; };
+		12E84FE31F4ECC4A0061C99E /* SAPFioriFlows.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12E84FE21F4ECC3E0061C99E /* SAPFioriFlows.framework */; };
+		12E84FE41F4ECC4A0061C99E /* SAPFioriFlows.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12E84FE21F4ECC3E0061C99E /* SAPFioriFlows.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		12E84FE51F4ECF220061C99E /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E84FDE1F4EBD460061C99E /* OnboardingManager.swift */; };
+		1452E4EBD44EBA1142712329 /* YmSesIosItemsMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA26EDEC54A33FEEF4D1651A /* YmSesIosItemsMasterViewController.swift */; };
+		23C706616D309A155B1C6BB3 /* YmSesIosView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C439C7DB5F5C684A92922784 /* YmSesIosView.storyboard */; };
+		2D258DCABC6570A6F7F5BB0F /* Subscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCDF839E71889F6007AD74F /* Subscription.swift */; };
+		2DCAE4568783491791C78062 /* YmSesIosViewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7C5F20B6004CF2DC282C2D /* YmSesIosViewDetailViewController.swift */; };
+		2E4E5F994AA83B0BDEEB68F8 /* YmSesIosViewMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FB5BC12DE61717F2898C71 /* YmSesIosViewMasterViewController.swift */; };
+		2FF992DF71308ABF4A29F871 /* YMSESAPPROVALSRVEntitiesStaticResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E339EEE8F548CC020807610D /* YMSESAPPROVALSRVEntitiesStaticResolver.swift */; };
+		31FA3EA2FC420A0360E71514 /* SubscriptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8312A8756230EF7BD93B0C9B /* SubscriptionDetailViewController.swift */; };
+		33FF0732E674D27382301858 /* Subscription.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 433A5F5417CA0DA79F7AB9A0 /* Subscription.storyboard */; };
+		3D8829269DE6FD18F2B0736A /* YMSESAPPROVALSRVEntitiesMetadataChanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5E020FC758A10E81D493D0 /* YMSESAPPROVALSRVEntitiesMetadataChanges.swift */; };
+		50A5578804CB808CCC6A8176 /* YmSesIosItemsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A4923FDD881569700B0A50 /* YmSesIosItemsDetailViewController.swift */; };
+		6BCEF047EB041C4306AE24BE /* YmSesIosCreateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 875711CE58B36416F5652EF4 /* YmSesIosCreateDetailViewController.swift */; };
+		71E24A89FF5543DFD2A1E6EC /* YMSESAPPROVALSRVEntitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A192C9579FB12D4225C0D /* YMSESAPPROVALSRVEntitiesFactory.swift */; };
+		7530F5CDE2576688D0DC6653 /* YMSESAPPROVALSRVEntitiesMetadataText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCC2AE81181900087898821 /* YMSESAPPROVALSRVEntitiesMetadataText.swift */; };
+		755533981F25FD330017A1BC /* SAPOfflineOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */; };
+		755533991F25FD330017A1BC /* SAPOfflineOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		756192211DBE1A99007F562C /* SAPOData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7561921A1DBE1A90007F562C /* SAPOData.framework */; };
+		756192221DBE1A99007F562C /* SAPOData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7561921A1DBE1A90007F562C /* SAPOData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7569DA531E5C717C00C5D751 /* SAPFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7569DA511E5C716A00C5D751 /* SAPFoundation.framework */; };
+		7569DA541E5C717C00C5D751 /* SAPFoundation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7569DA511E5C716A00C5D751 /* SAPFoundation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		759BA2701E6821A7001C32BA /* SAPFiori.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759BA26F1E6821A7001C32BA /* SAPFiori.framework */; };
+		759BA2721E6821AF001C32BA /* SAPFiori.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 759BA26F1E6821A7001C32BA /* SAPFiori.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		75AC42D41DAF824D00B445FF /* CollectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */; };
+		795755BF21B67FDD0041C2DE /* DetailScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795755BD21B67FDD0041C2DE /* DetailScreenViewController.swift */; };
+		795755C021B67FDD0041C2DE /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795755BE21B67FDD0041C2DE /* DetailTableViewController.swift */; };
+		795755C221B67FEE0041C2DE /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795755C121B67FEE0041C2DE /* CreateViewController.swift */; };
+		795755C721B680010041C2DE /* MasterItemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795755C321B680010041C2DE /* MasterItemsTableViewController.swift */; };
+		795755C821B680010041C2DE /* MasterItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795755C421B680010041C2DE /* MasterItemTableViewCell.swift */; };
+		795755C921B680010041C2DE /* MasterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795755C521B680010041C2DE /* MasterTableViewCell.swift */; };
+		795755CA21B680010041C2DE /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795755C621B680010041C2DE /* MasterTableViewController.swift */; };
+		795755CC21B6801C0041C2DE /* CustomMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795755CB21B6801C0041C2DE /* CustomMain.storyboard */; };
+		7971E0AE21B69C6E004D2A3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7971E0AC21B69C6E004D2A3F /* Main.storyboard */; };
+		7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1315B81D4B982000A5DA56 /* AppDelegate.swift */; };
+		7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1315C11D4B982000A5DA56 /* Assets.xcassets */; };
+		7A1315C51D4B982000A5DA56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */; };
+		7A16F06D1FD1B3C700D2FABD /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7A16F06C1FD1B3C700D2FABD /* README.md */; };
+		7A26CA1C1F31BA8800B156B6 /* CellCreationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A26CA1B1F31BA8800B156B6 /* CellCreationHelper.swift */; };
+		7A9F6FF61F3883D3000A1815 /* SAPFioriLoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9F6FF51F3883D3000A1815 /* SAPFioriLoadingIndicator.swift */; };
+		7D7CEB772392084828B2F766 /* YmSesIosSearhHelpDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB904CE7D36F2C16B960AAD /* YmSesIosSearhHelpDetailViewController.swift */; };
+		7F12BAC204DEB5D448F038D5 /* YmSesIosCreateMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83CDBCE2C0AD3422B2E3CE1F /* YmSesIosCreateMasterViewController.swift */; };
+		9A0233425243E8450487A9A4 /* YmSesIosCreate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5379FCE84FAD26905F2DA1E /* YmSesIosCreate.storyboard */; };
+		A54999DC499042F80E066B01 /* YmSesIosApproveMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591406913FC77CC9A2D4BAFC /* YmSesIosApproveMasterViewController.swift */; };
+		AD5F0E5B14B3A178F3B07899 /* YMSESAPPROVALSRVEntitiesMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F52EBE1AE7915A94FBEA53 /* YMSESAPPROVALSRVEntitiesMetadata.swift */; };
+		B58470762C6F7FED87D6AA00 /* NotificationMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67C5077F8DDD00F72C4FD924 /* NotificationMasterViewController.swift */; };
+		B863323C9AF2C8DA00352414 /* YmSesIosCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88760A92C485CA6FAC31288F /* YmSesIosCreate.swift */; };
+		C98E4EA87599D1478B07FA53 /* YmSesIosApproveDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D89774936ECFEF911708E62 /* YmSesIosApproveDetailViewController.swift */; };
+		C9C3F74D6865D521B78210B1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26262E195F1F4C7210BC3995 /* Notification.swift */; };
+		D903A9160A7C6608D03BDF97 /* YMSESAPPROVALSRVEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696BB38A1016FC0F820EDDA6 /* YMSESAPPROVALSRVEntities.swift */; };
+		DBB1444239736738C66FB39A /* YmSesIosApprove.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD125DD7F6E688F692C108A /* YmSesIosApprove.storyboard */; };
+		DEC71D7D7C2B7E9ACC81401A /* YMSESAPPROVALSRVEntitiesMetadataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4CB6D819132CEE4EA73D4A /* YMSESAPPROVALSRVEntitiesMetadataParser.swift */; };
+		E18F5D894CD2E5ED859E6B28 /* YmSesIosItems.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259DE95E89439B2C0EE0FA60 /* YmSesIosItems.storyboard */; };
+		EACD1CC7AC52DBF06C88B4A9 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E98B34C0ADA8EA4FA2018B7 /* NotificationDetailViewController.swift */; };
+		F0B35736A3289AA05C08DF1C /* YmSesIosSearhHelp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AB8F743C9046C72BC03243E /* YmSesIosSearhHelp.storyboard */; };
+		F8AFF58B3077B15C440305D1 /* YmSesIosSearhHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A9FB2FA64F7493B81A3F1B /* YmSesIosSearhHelp.swift */; };
+		F8FDF481467A79CBC0B67260 /* YmSesIosSearhHelpMasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8918C9BD1ADDC7D880885C1 /* YmSesIosSearhHelpMasterViewController.swift */; };
+		F9BD6DF0145F5703ECBD6AE4 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 762B35464B437C0C968860B5 /* Notification.storyboard */; };
+		FD85FD0277508A943AB58FA7 /* YmSesIosApprove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65982BFACF4C86C2D0FAF7A6 /* YmSesIosApprove.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		758AC1C31D5A265200311F39 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7569DA541E5C717C00C5D751 /* SAPFoundation.framework in Embed Frameworks */,
+				12E84FE41F4ECC4A0061C99E /* SAPFioriFlows.framework in Embed Frameworks */,
+				128604DB1E55B43B00C698B5 /* SAPCommon.framework in Embed Frameworks */,
+				755533991F25FD330017A1BC /* SAPOfflineOData.framework in Embed Frameworks */,
+				756192221DBE1A99007F562C /* SAPOData.framework in Embed Frameworks */,
+				759BA2721E6821AF001C32BA /* SAPFiori.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		11F52EBE1AE7915A94FBEA53 /* YMSESAPPROVALSRVEntitiesMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YMSESAPPROVALSRVEntitiesMetadata.swift; path = "Proxy Classes/SES_Approval/public/YMSESAPPROVALSRVEntitiesMetadata.swift"; sourceTree = "<group>"; };
+		1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SAPLogo@2x.png"; sourceTree = "<group>"; };
+		128604D91E55B41600C698B5 /* SAPCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPCommon.framework; sourceTree = "<group>"; };
+		128B53051F8E667000E64DF6 /* SnapshotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotViewController.swift; sourceTree = "<group>"; };
+		12D066CE1F4DDB0A0075EBA4 /* ConfigurationProvider.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ConfigurationProvider.plist; sourceTree = "<group>"; };
+		12E07EF11E96851800460A94 /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
+		12E84FDE1F4EBD460061C99E /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
+		12E84FE21F4ECC3E0061C99E /* SAPFioriFlows.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFioriFlows.framework; sourceTree = "<group>"; };
+		1E4691DB299C768752C57D16 /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Subscription.storyboard; sourceTree = "<group>"; };
+		26262E195F1F4C7210BC3995 /* Notification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notification.swift; path = "Proxy Classes/SES_Approval/public/Notification.swift"; sourceTree = "<group>"; };
+		3A5E020FC758A10E81D493D0 /* YMSESAPPROVALSRVEntitiesMetadataChanges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YMSESAPPROVALSRVEntitiesMetadataChanges.swift; path = "Proxy Classes/SES_Approval/internal/YMSESAPPROVALSRVEntitiesMetadataChanges.swift"; sourceTree = "<group>"; };
+		44A9FB2FA64F7493B81A3F1B /* YmSesIosSearhHelp.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosSearhHelp.swift; path = "Proxy Classes/SES_Approval/public/YmSesIosSearhHelp.swift"; sourceTree = "<group>"; };
+		4F2FAE0237DBA24FBC9E18E2 /* SubscriptionMasterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubscriptionMasterViewController.swift; path = Subscription/SubscriptionMasterViewController.swift; sourceTree = "<group>"; };
+		591406913FC77CC9A2D4BAFC /* YmSesIosApproveMasterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosApproveMasterViewController.swift; path = YmSesIosApprove/YmSesIosApproveMasterViewController.swift; sourceTree = "<group>"; };
+		592A192C9579FB12D4225C0D /* YMSESAPPROVALSRVEntitiesFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YMSESAPPROVALSRVEntitiesFactory.swift; path = "Proxy Classes/SES_Approval/internal/YMSESAPPROVALSRVEntitiesFactory.swift"; sourceTree = "<group>"; };
+		5E98B34C0ADA8EA4FA2018B7 /* NotificationDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationDetailViewController.swift; path = Notification/NotificationDetailViewController.swift; sourceTree = "<group>"; };
+		65982BFACF4C86C2D0FAF7A6 /* YmSesIosApprove.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosApprove.swift; path = "Proxy Classes/SES_Approval/public/YmSesIosApprove.swift"; sourceTree = "<group>"; };
+		67C5077F8DDD00F72C4FD924 /* NotificationMasterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NotificationMasterViewController.swift; path = Notification/NotificationMasterViewController.swift; sourceTree = "<group>"; };
+		696BB38A1016FC0F820EDDA6 /* YMSESAPPROVALSRVEntities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YMSESAPPROVALSRVEntities.swift; path = "Proxy Classes/SES_Approval/public/YMSESAPPROVALSRVEntities.swift"; sourceTree = "<group>"; };
+		755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOfflineOData.framework; sourceTree = "<group>"; };
+		7561921A1DBE1A90007F562C /* SAPOData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPOData.framework; sourceTree = "<group>"; };
+		7569DA511E5C716A00C5D751 /* SAPFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFoundation.framework; sourceTree = "<group>"; };
+		759BA26F1E6821A7001C32BA /* SAPFiori.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SAPFiori.framework; sourceTree = "<group>"; };
+		75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionsViewController.swift; sourceTree = "<group>"; };
+		795755BD21B67FDD0041C2DE /* DetailScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailScreenViewController.swift; path = ../../../../Season1/SESTestX/SESTestX/DetailScreenViewController.swift; sourceTree = "<group>"; };
+		795755BE21B67FDD0041C2DE /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailTableViewController.swift; path = ../../../../Season1/SESTestX/SESTestX/DetailTableViewController.swift; sourceTree = "<group>"; };
+		795755C121B67FEE0041C2DE /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateViewController.swift; path = ../../../../Season1/SESTestX/SESTestX/CreateViewController.swift; sourceTree = "<group>"; };
+		795755C321B680010041C2DE /* MasterItemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterItemsTableViewController.swift; path = ../../../../Season1/SESTestX/SESTestX/MasterItemsTableViewController.swift; sourceTree = "<group>"; };
+		795755C421B680010041C2DE /* MasterItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterItemTableViewCell.swift; path = ../../../../Season1/SESTestX/SESTestX/MasterItemTableViewCell.swift; sourceTree = "<group>"; };
+		795755C521B680010041C2DE /* MasterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterTableViewCell.swift; path = ../../../../Season1/SESTestX/SESTestX/MasterTableViewCell.swift; sourceTree = "<group>"; };
+		795755C621B680010041C2DE /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MasterTableViewController.swift; path = ../../../../Season1/SESTestX/SESTestX/MasterTableViewController.swift; sourceTree = "<group>"; };
+		795755CB21B6801C0041C2DE /* CustomMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CustomMain.storyboard; path = ../../../../Season1/SESTestX/SESTestX/CustomMain.storyboard; sourceTree = "<group>"; };
+		7971E0AD21B69C6E004D2A3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../Season1/SESTestX/SESTestX/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7A1315B51D4B982000A5DA56 /* SESDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SESDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1315B81D4B982000A5DA56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7A1315C11D4B982000A5DA56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7A1315C41D4B982000A5DA56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A1315C61D4B982000A5DA56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A16F06C1FD1B3C700D2FABD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7A26CA1B1F31BA8800B156B6 /* CellCreationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellCreationHelper.swift; sourceTree = "<group>"; };
+		7A9F6FF51F3883D3000A1815 /* SAPFioriLoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAPFioriLoadingIndicator.swift; sourceTree = "<group>"; };
+		7D56548EB8734FED453619E8 /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/YmSesIosApprove.storyboard; sourceTree = "<group>"; };
+		8312A8756230EF7BD93B0C9B /* SubscriptionDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubscriptionDetailViewController.swift; path = Subscription/SubscriptionDetailViewController.swift; sourceTree = "<group>"; };
+		83CDBCE2C0AD3422B2E3CE1F /* YmSesIosCreateMasterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosCreateMasterViewController.swift; path = YmSesIosCreate/YmSesIosCreateMasterViewController.swift; sourceTree = "<group>"; };
+		875711CE58B36416F5652EF4 /* YmSesIosCreateDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosCreateDetailViewController.swift; path = YmSesIosCreate/YmSesIosCreateDetailViewController.swift; sourceTree = "<group>"; };
+		88760A92C485CA6FAC31288F /* YmSesIosCreate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosCreate.swift; path = "Proxy Classes/SES_Approval/public/YmSesIosCreate.swift"; sourceTree = "<group>"; };
+		8DD719584F0C5C6743DF0E85 /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Notification.storyboard; sourceTree = "<group>"; };
+		96A9496723496EB2A5137D87 /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/YmSesIosItems.storyboard; sourceTree = "<group>"; };
+		9BC2CEAFF287F22271579366 /* YmSesIosItems.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosItems.swift; path = "Proxy Classes/SES_Approval/public/YmSesIosItems.swift"; sourceTree = "<group>"; };
+		9D4CB6D819132CEE4EA73D4A /* YMSESAPPROVALSRVEntitiesMetadataParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YMSESAPPROVALSRVEntitiesMetadataParser.swift; path = "Proxy Classes/SES_Approval/internal/YMSESAPPROVALSRVEntitiesMetadataParser.swift"; sourceTree = "<group>"; };
+		9D89774936ECFEF911708E62 /* YmSesIosApproveDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosApproveDetailViewController.swift; path = YmSesIosApprove/YmSesIosApproveDetailViewController.swift; sourceTree = "<group>"; };
+		A62AD4581B30B572ABD3E384 /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/YmSesIosView.storyboard; sourceTree = "<group>"; };
+		A6FB5BC12DE61717F2898C71 /* YmSesIosViewMasterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosViewMasterViewController.swift; path = YmSesIosView/YmSesIosViewMasterViewController.swift; sourceTree = "<group>"; };
+		A8918C9BD1ADDC7D880885C1 /* YmSesIosSearhHelpMasterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosSearhHelpMasterViewController.swift; path = YmSesIosSearhHelp/YmSesIosSearhHelpMasterViewController.swift; sourceTree = "<group>"; };
+		AFCC2AE81181900087898821 /* YMSESAPPROVALSRVEntitiesMetadataText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YMSESAPPROVALSRVEntitiesMetadataText.swift; path = "Proxy Classes/SES_Approval/internal/YMSESAPPROVALSRVEntitiesMetadataText.swift"; sourceTree = "<group>"; };
+		B24AEE5D1243D70EC1DB419F /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/YmSesIosSearhHelp.storyboard; sourceTree = "<group>"; };
+		CFAA8DE803DC1A366DF53F2A /* Base */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/YmSesIosCreate.storyboard; sourceTree = "<group>"; };
+		D0516B618B5A31756711A89E /* YmSesIosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosView.swift; path = "Proxy Classes/SES_Approval/public/YmSesIosView.swift"; sourceTree = "<group>"; };
+		E0A4923FDD881569700B0A50 /* YmSesIosItemsDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosItemsDetailViewController.swift; path = YmSesIosItems/YmSesIosItemsDetailViewController.swift; sourceTree = "<group>"; };
+		E339EEE8F548CC020807610D /* YMSESAPPROVALSRVEntitiesStaticResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YMSESAPPROVALSRVEntitiesStaticResolver.swift; path = "Proxy Classes/SES_Approval/internal/YMSESAPPROVALSRVEntitiesStaticResolver.swift"; sourceTree = "<group>"; };
+		EF7C5F20B6004CF2DC282C2D /* YmSesIosViewDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosViewDetailViewController.swift; path = YmSesIosView/YmSesIosViewDetailViewController.swift; sourceTree = "<group>"; };
+		EFCDF839E71889F6007AD74F /* Subscription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Subscription.swift; path = "Proxy Classes/SES_Approval/public/Subscription.swift"; sourceTree = "<group>"; };
+		FA26EDEC54A33FEEF4D1651A /* YmSesIosItemsMasterViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosItemsMasterViewController.swift; path = YmSesIosItems/YmSesIosItemsMasterViewController.swift; sourceTree = "<group>"; };
+		FDB904CE7D36F2C16B960AAD /* YmSesIosSearhHelpDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YmSesIosSearhHelpDetailViewController.swift; path = YmSesIosSearhHelp/YmSesIosSearhHelpDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7A1315B21D4B982000A5DA56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7569DA531E5C717C00C5D751 /* SAPFoundation.framework in Frameworks */,
+				12E84FE31F4ECC4A0061C99E /* SAPFioriFlows.framework in Frameworks */,
+				756192211DBE1A99007F562C /* SAPOData.framework in Frameworks */,
+				755533981F25FD330017A1BC /* SAPOfflineOData.framework in Frameworks */,
+				128604DA1E55B41600C698B5 /* SAPCommon.framework in Frameworks */,
+				759BA2701E6821A7001C32BA /* SAPFiori.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		12D066CB1F4DDAE40075EBA4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				12D066CE1F4DDB0A0075EBA4 /* ConfigurationProvider.plist */,
+				12E84FDE1F4EBD460061C99E /* OnboardingManager.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		251A6C82A12B57CC3A9E45F2 /* YmSesIosApprove */ = {
+			isa = PBXGroup;
+			children = (
+				FDD125DD7F6E688F692C108A /* YmSesIosApprove.storyboard */,
+				591406913FC77CC9A2D4BAFC /* YmSesIosApproveMasterViewController.swift */,
+				9D89774936ECFEF911708E62 /* YmSesIosApproveDetailViewController.swift */,
+			);
+			name = YmSesIosApprove;
+			sourceTree = "<group>";
+		};
+		7532C1BB1D5B6917004B03AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				12E07EF11E96851800460A94 /* CollectionType.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		755C10B41D5C63B000ECF6A2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7A9F6FF51F3883D3000A1815 /* SAPFioriLoadingIndicator.swift */,
+				7A26CA1B1F31BA8800B156B6 /* CellCreationHelper.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		75AC42C81DAF80C000B445FF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				75AC42CE1DAF824D00B445FF /* CollectionsViewController.swift */,
+				128B53051F8E667000E64DF6 /* SnapshotViewController.swift */,
+				8BD120C389FF6E08F2893819 /* Notification */,
+				A1A40B986BDD3741E4DF4CD7 /* Subscription */,
+				C6B5FD14E288C024EC079A39 /* YmSesIosView */,
+				9467319379ADB612C20C2732 /* YmSesIosCreate */,
+				84E5848E0D3590F6114C74B8 /* YmSesIosSearhHelp */,
+				251A6C82A12B57CC3A9E45F2 /* YmSesIosApprove */,
+				CE8100E8E34E3A085EB67909 /* YmSesIosItems */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		75D373EF1DD1FB0800888D4C /* Proxy Classes */ = {
+			isa = PBXGroup;
+			children = (
+				EA44B7643577B73C8B3008D3 /* public */,
+				FADD5A8B2C982E06B59DEB81 /* internal */,
+			);
+			name = "Proxy Classes";
+			sourceTree = "<group>";
+		};
+		795755B821B67FB50041C2DE /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				795755CB21B6801C0041C2DE /* CustomMain.storyboard */,
+				795755C321B680010041C2DE /* MasterItemsTableViewController.swift */,
+				795755C421B680010041C2DE /* MasterItemTableViewCell.swift */,
+				795755C521B680010041C2DE /* MasterTableViewCell.swift */,
+				795755C621B680010041C2DE /* MasterTableViewController.swift */,
+				795755C121B67FEE0041C2DE /* CreateViewController.swift */,
+				795755BD21B67FDD0041C2DE /* DetailScreenViewController.swift */,
+				795755BE21B67FDD0041C2DE /* DetailTableViewController.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		7A1315AC1D4B982000A5DA56 = {
+			isa = PBXGroup;
+			children = (
+				7A16F06C1FD1B3C700D2FABD /* README.md */,
+				7A1315B71D4B982000A5DA56 /* SESDemo */,
+				7A1315B61D4B982000A5DA56 /* Products */,
+				7A1315CC1D4B990B00A5DA56 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7A1315B61D4B982000A5DA56 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7A1315B51D4B982000A5DA56 /* SESDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7A1315B71D4B982000A5DA56 /* SESDemo */ = {
+			isa = PBXGroup;
+			children = (
+				795755B821B67FB50041C2DE /* Custom */,
+				12D066CB1F4DDAE40075EBA4 /* Onboarding */,
+				7532C1BB1D5B6917004B03AF /* Model */,
+				75AC42C81DAF80C000B445FF /* ViewControllers */,
+				75D373EF1DD1FB0800888D4C /* Proxy Classes */,
+				755C10B41D5C63B000ECF6A2 /* Utils */,
+				7A1315B81D4B982000A5DA56 /* AppDelegate.swift */,
+				7971E0AC21B69C6E004D2A3F /* Main.storyboard */,
+				7A1315C11D4B982000A5DA56 /* Assets.xcassets */,
+				7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */,
+				1277F7601F8E66AC0060AF58 /* SAPLogo@2x.png */,
+				7A1315C61D4B982000A5DA56 /* Info.plist */,
+			);
+			path = SESDemo;
+			sourceTree = "<group>";
+		};
+		7A1315CC1D4B990B00A5DA56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12E84FE21F4ECC3E0061C99E /* SAPFioriFlows.framework */,
+				755533971F25FD2A0017A1BC /* SAPOfflineOData.framework */,
+				759BA26F1E6821A7001C32BA /* SAPFiori.framework */,
+				7569DA511E5C716A00C5D751 /* SAPFoundation.framework */,
+				7561921A1DBE1A90007F562C /* SAPOData.framework */,
+				128604D91E55B41600C698B5 /* SAPCommon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84E5848E0D3590F6114C74B8 /* YmSesIosSearhHelp */ = {
+			isa = PBXGroup;
+			children = (
+				5AB8F743C9046C72BC03243E /* YmSesIosSearhHelp.storyboard */,
+				A8918C9BD1ADDC7D880885C1 /* YmSesIosSearhHelpMasterViewController.swift */,
+				FDB904CE7D36F2C16B960AAD /* YmSesIosSearhHelpDetailViewController.swift */,
+			);
+			name = YmSesIosSearhHelp;
+			sourceTree = "<group>";
+		};
+		8BD120C389FF6E08F2893819 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				762B35464B437C0C968860B5 /* Notification.storyboard */,
+				67C5077F8DDD00F72C4FD924 /* NotificationMasterViewController.swift */,
+				5E98B34C0ADA8EA4FA2018B7 /* NotificationDetailViewController.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		9467319379ADB612C20C2732 /* YmSesIosCreate */ = {
+			isa = PBXGroup;
+			children = (
+				D5379FCE84FAD26905F2DA1E /* YmSesIosCreate.storyboard */,
+				83CDBCE2C0AD3422B2E3CE1F /* YmSesIosCreateMasterViewController.swift */,
+				875711CE58B36416F5652EF4 /* YmSesIosCreateDetailViewController.swift */,
+			);
+			name = YmSesIosCreate;
+			sourceTree = "<group>";
+		};
+		A1A40B986BDD3741E4DF4CD7 /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				433A5F5417CA0DA79F7AB9A0 /* Subscription.storyboard */,
+				4F2FAE0237DBA24FBC9E18E2 /* SubscriptionMasterViewController.swift */,
+				8312A8756230EF7BD93B0C9B /* SubscriptionDetailViewController.swift */,
+			);
+			name = Subscription;
+			sourceTree = "<group>";
+		};
+		C6B5FD14E288C024EC079A39 /* YmSesIosView */ = {
+			isa = PBXGroup;
+			children = (
+				C439C7DB5F5C684A92922784 /* YmSesIosView.storyboard */,
+				A6FB5BC12DE61717F2898C71 /* YmSesIosViewMasterViewController.swift */,
+				EF7C5F20B6004CF2DC282C2D /* YmSesIosViewDetailViewController.swift */,
+			);
+			name = YmSesIosView;
+			sourceTree = "<group>";
+		};
+		CE8100E8E34E3A085EB67909 /* YmSesIosItems */ = {
+			isa = PBXGroup;
+			children = (
+				259DE95E89439B2C0EE0FA60 /* YmSesIosItems.storyboard */,
+				FA26EDEC54A33FEEF4D1651A /* YmSesIosItemsMasterViewController.swift */,
+				E0A4923FDD881569700B0A50 /* YmSesIosItemsDetailViewController.swift */,
+			);
+			name = YmSesIosItems;
+			sourceTree = "<group>";
+		};
+		EA44B7643577B73C8B3008D3 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				696BB38A1016FC0F820EDDA6 /* YMSESAPPROVALSRVEntities.swift */,
+				88760A92C485CA6FAC31288F /* YmSesIosCreate.swift */,
+				D0516B618B5A31756711A89E /* YmSesIosView.swift */,
+				44A9FB2FA64F7493B81A3F1B /* YmSesIosSearhHelp.swift */,
+				11F52EBE1AE7915A94FBEA53 /* YMSESAPPROVALSRVEntitiesMetadata.swift */,
+				65982BFACF4C86C2D0FAF7A6 /* YmSesIosApprove.swift */,
+				EFCDF839E71889F6007AD74F /* Subscription.swift */,
+				9BC2CEAFF287F22271579366 /* YmSesIosItems.swift */,
+				26262E195F1F4C7210BC3995 /* Notification.swift */,
+			);
+			name = public;
+			sourceTree = "<group>";
+		};
+		FADD5A8B2C982E06B59DEB81 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				3A5E020FC758A10E81D493D0 /* YMSESAPPROVALSRVEntitiesMetadataChanges.swift */,
+				AFCC2AE81181900087898821 /* YMSESAPPROVALSRVEntitiesMetadataText.swift */,
+				9D4CB6D819132CEE4EA73D4A /* YMSESAPPROVALSRVEntitiesMetadataParser.swift */,
+				592A192C9579FB12D4225C0D /* YMSESAPPROVALSRVEntitiesFactory.swift */,
+				E339EEE8F548CC020807610D /* YMSESAPPROVALSRVEntitiesStaticResolver.swift */,
+			);
+			name = internal;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7A1315B41D4B982000A5DA56 /* SESDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A1315C91D4B982000A5DA56 /* Build configuration list for PBXNativeTarget "SESDemo" */;
+			buildPhases = (
+				7A1315B11D4B982000A5DA56 /* Sources */,
+				7A1315B21D4B982000A5DA56 /* Frameworks */,
+				7A1315B31D4B982000A5DA56 /* Resources */,
+				758AC1C31D5A265200311F39 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SESDemo;
+			productName = SESDemo;
+			productReference = 7A1315B51D4B982000A5DA56 /* SESDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7A1315AD1D4B982000A5DA56 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = SAP;
+				TargetAttributes = {
+					7A1315B41D4B982000A5DA56 = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 1000;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 7A1315B01D4B982000A5DA56 /* Build configuration list for PBXProject "SESDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7A1315AC1D4B982000A5DA56;
+			productRefGroup = 7A1315B61D4B982000A5DA56 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A1315B41D4B982000A5DA56 /* SESDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7A1315B31D4B982000A5DA56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A16F06D1FD1B3C700D2FABD /* README.md in Resources */,
+				7A1315C51D4B982000A5DA56 /* LaunchScreen.storyboard in Resources */,
+				12D066CF1F4DDB0E0075EBA4 /* ConfigurationProvider.plist in Resources */,
+				7A1315C21D4B982000A5DA56 /* Assets.xcassets in Resources */,
+				795755CC21B6801C0041C2DE /* CustomMain.storyboard in Resources */,
+				1277F7611F8E66AF0060AF58 /* SAPLogo@2x.png in Resources */,
+				F9BD6DF0145F5703ECBD6AE4 /* Notification.storyboard in Resources */,
+				7971E0AE21B69C6E004D2A3F /* Main.storyboard in Resources */,
+				33FF0732E674D27382301858 /* Subscription.storyboard in Resources */,
+				23C706616D309A155B1C6BB3 /* YmSesIosView.storyboard in Resources */,
+				9A0233425243E8450487A9A4 /* YmSesIosCreate.storyboard in Resources */,
+				F0B35736A3289AA05C08DF1C /* YmSesIosSearhHelp.storyboard in Resources */,
+				DBB1444239736738C66FB39A /* YmSesIosApprove.storyboard in Resources */,
+				E18F5D894CD2E5ED859E6B28 /* YmSesIosItems.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A1315B11D4B982000A5DA56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				128B53061F8E667000E64DF6 /* SnapshotViewController.swift in Sources */,
+				12E84FE51F4ECF220061C99E /* OnboardingManager.swift in Sources */,
+				7A9F6FF61F3883D3000A1815 /* SAPFioriLoadingIndicator.swift in Sources */,
+				7A26CA1C1F31BA8800B156B6 /* CellCreationHelper.swift in Sources */,
+				12E07EF21E96851800460A94 /* CollectionType.swift in Sources */,
+				75AC42D41DAF824D00B445FF /* CollectionsViewController.swift in Sources */,
+				795755C721B680010041C2DE /* MasterItemsTableViewController.swift in Sources */,
+				795755BF21B67FDD0041C2DE /* DetailScreenViewController.swift in Sources */,
+				7A1315B91D4B982000A5DA56 /* AppDelegate.swift in Sources */,
+				795755C221B67FEE0041C2DE /* CreateViewController.swift in Sources */,
+				D903A9160A7C6608D03BDF97 /* YMSESAPPROVALSRVEntities.swift in Sources */,
+				B863323C9AF2C8DA00352414 /* YmSesIosCreate.swift in Sources */,
+				0BEFFB3CF16DB7BC9AE77355 /* YmSesIosView.swift in Sources */,
+				795755CA21B680010041C2DE /* MasterTableViewController.swift in Sources */,
+				F8AFF58B3077B15C440305D1 /* YmSesIosSearhHelp.swift in Sources */,
+				AD5F0E5B14B3A178F3B07899 /* YMSESAPPROVALSRVEntitiesMetadata.swift in Sources */,
+				FD85FD0277508A943AB58FA7 /* YmSesIosApprove.swift in Sources */,
+				2D258DCABC6570A6F7F5BB0F /* Subscription.swift in Sources */,
+				07DEFCD8C984B6706F522259 /* YmSesIosItems.swift in Sources */,
+				C9C3F74D6865D521B78210B1 /* Notification.swift in Sources */,
+				3D8829269DE6FD18F2B0736A /* YMSESAPPROVALSRVEntitiesMetadataChanges.swift in Sources */,
+				7530F5CDE2576688D0DC6653 /* YMSESAPPROVALSRVEntitiesMetadataText.swift in Sources */,
+				DEC71D7D7C2B7E9ACC81401A /* YMSESAPPROVALSRVEntitiesMetadataParser.swift in Sources */,
+				71E24A89FF5543DFD2A1E6EC /* YMSESAPPROVALSRVEntitiesFactory.swift in Sources */,
+				2FF992DF71308ABF4A29F871 /* YMSESAPPROVALSRVEntitiesStaticResolver.swift in Sources */,
+				B58470762C6F7FED87D6AA00 /* NotificationMasterViewController.swift in Sources */,
+				EACD1CC7AC52DBF06C88B4A9 /* NotificationDetailViewController.swift in Sources */,
+				0186C856B4415F13CE8A36D6 /* SubscriptionMasterViewController.swift in Sources */,
+				31FA3EA2FC420A0360E71514 /* SubscriptionDetailViewController.swift in Sources */,
+				795755C921B680010041C2DE /* MasterTableViewCell.swift in Sources */,
+				2E4E5F994AA83B0BDEEB68F8 /* YmSesIosViewMasterViewController.swift in Sources */,
+				2DCAE4568783491791C78062 /* YmSesIosViewDetailViewController.swift in Sources */,
+				795755C021B67FDD0041C2DE /* DetailTableViewController.swift in Sources */,
+				7F12BAC204DEB5D448F038D5 /* YmSesIosCreateMasterViewController.swift in Sources */,
+				6BCEF047EB041C4306AE24BE /* YmSesIosCreateDetailViewController.swift in Sources */,
+				F8FDF481467A79CBC0B67260 /* YmSesIosSearhHelpMasterViewController.swift in Sources */,
+				7D7CEB772392084828B2F766 /* YmSesIosSearhHelpDetailViewController.swift in Sources */,
+				A54999DC499042F80E066B01 /* YmSesIosApproveMasterViewController.swift in Sources */,
+				C98E4EA87599D1478B07FA53 /* YmSesIosApproveDetailViewController.swift in Sources */,
+				1452E4EBD44EBA1142712329 /* YmSesIosItemsMasterViewController.swift in Sources */,
+				795755C821B680010041C2DE /* MasterItemTableViewCell.swift in Sources */,
+				50A5578804CB808CCC6A8176 /* YmSesIosItemsDetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		259DE95E89439B2C0EE0FA60 /* YmSesIosItems.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96A9496723496EB2A5137D87 /* Base */,
+			);
+			name = YmSesIosItems.storyboard;
+			path = YmSesIosItems;
+			sourceTree = "<group>";
+		};
+		433A5F5417CA0DA79F7AB9A0 /* Subscription.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E4691DB299C768752C57D16 /* Base */,
+			);
+			name = Subscription.storyboard;
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		5AB8F743C9046C72BC03243E /* YmSesIosSearhHelp.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B24AEE5D1243D70EC1DB419F /* Base */,
+			);
+			name = YmSesIosSearhHelp.storyboard;
+			path = YmSesIosSearhHelp;
+			sourceTree = "<group>";
+		};
+		762B35464B437C0C968860B5 /* Notification.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8DD719584F0C5C6743DF0E85 /* Base */,
+			);
+			name = Notification.storyboard;
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		7971E0AC21B69C6E004D2A3F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7971E0AD21B69C6E004D2A3F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7A1315C31D4B982000A5DA56 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A1315C41D4B982000A5DA56 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C439C7DB5F5C684A92922784 /* YmSesIosView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A62AD4581B30B572ABD3E384 /* Base */,
+			);
+			name = YmSesIosView.storyboard;
+			path = YmSesIosView;
+			sourceTree = "<group>";
+		};
+		D5379FCE84FAD26905F2DA1E /* YmSesIosCreate.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CFAA8DE803DC1A366DF53F2A /* Base */,
+			);
+			name = YmSesIosCreate.storyboard;
+			path = YmSesIosCreate;
+			sourceTree = "<group>";
+		};
+		FDD125DD7F6E688F692C108A /* YmSesIosApprove.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7D56548EB8734FED453619E8 /* Base */,
+			);
+			name = YmSesIosApprove.storyboard;
+			path = YmSesIosApprove;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7A1315C71D4B982000A5DA56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7A1315C81D4B982000A5DA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7A1315CA1D4B982000A5DA56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SESDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = XOM.SESDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		7A1315CB1D4B982000A5DA56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = SESDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = XOM.SESDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A1315B01D4B982000A5DA56 /* Build configuration list for PBXProject "SESDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1315C71D4B982000A5DA56 /* Debug */,
+				7A1315C81D4B982000A5DA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7A1315C91D4B982000A5DA56 /* Build configuration list for PBXNativeTarget "SESDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A1315CA1D4B982000A5DA56 /* Debug */,
+				7A1315CB1D4B982000A5DA56 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7A1315AD1D4B982000A5DA56 /* Project object */;
+}
