@@ -30,11 +30,11 @@ class MasterTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var ymsesapprovalsrvEntities: YMSESAPPROVALSRVEntities<OnlineODataProvider> {
-        return self.appDelegate.ymsesapprovalsrvEntities
+        return self.appDelegate.ymsesapprovalsrvEntitiesOnline
     }
     // MARK: Offline provider and delegate
     private var ymsesapprovalsrvEntitiesOffline:  YMSESAPPROVALSRVEntities<OfflineODataProvider> {
-        return self.appDelegate.ymsesapprovalsrvEntitiesOffline
+        return self.appDelegate.ymsesapprovalsrvEntities
     }
     private var isStoreOpened = false
    
@@ -52,7 +52,7 @@ class MasterTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
         //self.refreshControl?.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         //self.tableView.addSubview(self.refreshControl!)
         // Cell height settings
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 98
         //self.updateTable()
         self.entitySetHasChanged()
@@ -119,7 +119,7 @@ class MasterTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle != .delete {
             return
         }
@@ -147,16 +147,16 @@ class MasterTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
     // MARK: Data accessing
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
         
-//        let query = DataQuery().selectAll().top(20)
-//        //query = query.expand(YmSesIosApprove.headToItems)
-//        self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: query) { yMSESIOSAPPROVESet, error in
-//            guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
-//                completionHandler(error!)
-//                return
-//            }
-//            self.entities = yMSESIOSAPPROVESet
-//            completionHandler(nil)
-//        }
+        var query = DataQuery().selectAll().top(20)
+        print(query)
+        self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: query) { yMSESIOSAPPROVESet, error in
+          guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
+          completionHandler(error!)
+          return
+            }
+         self.entities = yMSESIOSAPPROVESet
+         completionHandler(nil)
+         }
         
         
         
@@ -186,8 +186,8 @@ class MasterTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
                     return
                 }
 
-                let queryOn = DataQuery().selectAll().top(20)
-                //query = query.expand(YmSesIosApprove.headToItems)
+                var queryOn = DataQuery().selectAll().top(20)
+                query = query.expand(YmSesIosApprove.headToItems)
                 self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: queryOn) { yMSESIOSAPPROVESet, error in
                     guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
                         completionHandler(error!)

@@ -13,6 +13,7 @@ import UIKit
 import Foundation
 import SAPFoundation
 import SAPOData
+import SAPOfflineOData
 import SAPFiori
 import SAPCommon
 
@@ -26,7 +27,7 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
     
     private let appDelegate = UIApplication.shared.delegate as! AppDelegate
     private var ymsesapprovalsrvEntities: YMSESAPPROVALSRVEntities<OnlineODataProvider> {
-        return self.appDelegate.ymsesapprovalsrvEntities
+        return self.appDelegate.ymsesapprovalsrvEntitiesOnline
     }
     
     var SeS: YmSesIosApprove?
@@ -47,7 +48,7 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
         self.refreshControl?.addTarget(self, action: #selector(self.refresh), for: UIControlEvents.valueChanged)
         //bcust self.tableView.addSubview(self.refreshControl!)
         // Cell height settings
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 98
         //self.updateTable()
         self.entitySetHasChanged()
@@ -89,7 +90,7 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle != .delete {
             return
         }
@@ -114,6 +115,7 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
         var query = DataQuery().withKey(YmSesIosApprove.key(lblni: SeS?.lblni!))
         query = query.expand(YmSesIosApprove.headToItems)
+        print(query)
         
         self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: query) { yMSESIOSAPPROVESet, error in
             guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
