@@ -30,6 +30,12 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
         return self.appDelegate.ymsesapprovalsrvEntitiesOnline
     }
     
+    // MARK: Offline provider and delegate
+    private var ymsesapprovalsrvEntitiesOffline:  YMSESAPPROVALSRVEntities<OfflineODataProvider> {
+        return self.appDelegate.ymsesapprovalsrvEntities
+    }
+    
+    private var isStoreOpened = false
     var SeS: YmSesIosApprove?
     var tableUpdater: EntitySetUpdaterDelegate?
     
@@ -113,20 +119,71 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
     
     // MARK: Data accessing
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
-        var query = DataQuery().withKey(YmSesIosApprove.key(lblni: SeS?.lblni!))
-        query = query.expand(YmSesIosApprove.headToItems)
-        print(query)
+//        var query = DataQuery().withKey(YmSesIosApprove.key(lblni: SeS?.lblni!))
+//        query = query.expand(YmSesIosApprove.headToItems)
+//        print(query)
+//
+//        self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: query) { yMSESIOSAPPROVESet, error in
+//            guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
+//                completionHandler(error!)
+//                return
+//            }
+//            self.entities2 = yMSESIOSAPPROVESet
+//            completionHandler(nil)
+//
+//            //bcust
+//            self.entities = (self.entities2.first?.headToItems)!
+//        }
+//
         
-        self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: query) { yMSESIOSAPPROVESet, error in
-            guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
-                completionHandler(error!)
-                return
+        // MARK: Offline request implementation
+        // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
+        
+        ymsesapprovalsrvEntitiesOffline.open { error in
+            guard error == nil else {
+                return;
             }
-            self.entities2 = yMSESIOSAPPROVESet
-            completionHandler(nil)
             
-            //bcust
-            self.entities = (self.entities2.first?.headToItems)!
+            self.isStoreOpened = true
+            
+            self.ymsesapprovalsrvEntitiesOffline.download { error in
+                guard error == nil else {
+                    var queryOff = DataQuery().withKey(YmSesIosApprove.key(lblni: self.SeS?.lblni!))
+                    queryOff = queryOff.expand(YmSesIosApprove.headToItems)
+                    print(queryOff)
+                    self.ymsesapprovalsrvEntitiesOffline.fetchYMSESIOSAPPROVESet(matching: queryOff) { products, error in
+                        guard let products = products else {
+                            completionHandler(error!)
+                            self.closeOfflineStore()
+                            return
+                        }
+                        self.entities2 = products
+                        print (self.entities2.first)
+                        print (self.entities2.first?.headToItems)
+                        self.entities = (self.entities2.first?.headToItems)!
+                        print(self.entities)
+                        completionHandler(nil)
+                        self.closeOfflineStore()
+                    }
+                    return
+                }
+                
+                var queryOn = DataQuery().withKey(YmSesIosApprove.key(lblni: self.SeS?.lblni!))
+                queryOn = queryOn.expand(YmSesIosApprove.headToItems)
+                print(queryOn)
+                self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: queryOn) { yMSESIOSAPPROVESet, error in
+                    guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
+                        completionHandler(error!)
+                        return
+                    }
+                    self.entities2 = yMSESIOSAPPROVESet
+                    print (self.entities2.first)
+                    print (self.entities2.first?.headToItems)
+                    self.entities = (self.entities2.first?.headToItems)!
+                    
+                    completionHandler(nil)
+                }
+            }
         }
     }
     
@@ -149,6 +206,18 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
                 self.hideFioriLoadingIndicator()
             }
         })
+    }
+    
+    func closeOfflineStore() {
+        if isStoreOpened {
+            do {
+                try ymsesapprovalsrvEntitiesOffline.close()
+                isStoreOpened = false
+            } catch {
+                logger.error("Offline Store closing failed")
+            }
+        }
+        logger.info("Offline Store closed")
     }
     
     private func loadData(completionHandler: @escaping () -> Void) {

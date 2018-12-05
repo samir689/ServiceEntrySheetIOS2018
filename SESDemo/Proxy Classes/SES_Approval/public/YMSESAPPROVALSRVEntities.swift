@@ -151,6 +151,7 @@ open class YMSESAPPROVALSRVEntities<Provider: DataServiceProvider>: DataService<
         self.addBackgroundOperationForFunction {
             do {
                 let result: Array<YmSesIosItems> = try self.fetchYMSESIOSITEMSSet(matching: query, headers: headers, options: options)
+                print(result)
                 self.completionQueue.addOperation {
                     completionHandler(result, nil)
                 }

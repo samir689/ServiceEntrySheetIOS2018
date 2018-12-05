@@ -147,16 +147,16 @@ class MasterTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
     // MARK: Data accessing
     func requestEntities(completionHandler: @escaping (Error?) -> Void) {
         
-        var query = DataQuery().selectAll().top(20)
-        print(query)
-        self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: query) { yMSESIOSAPPROVESet, error in
-          guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
-          completionHandler(error!)
-          return
-            }
-         self.entities = yMSESIOSAPPROVESet
-         completionHandler(nil)
-         }
+//        var query = DataQuery().selectAll().top(20)
+//        print(query)
+//        self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: query) { yMSESIOSAPPROVESet, error in
+//          guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
+//          completionHandler(error!)
+//          return
+//            }
+//         self.entities = yMSESIOSAPPROVESet
+//         completionHandler(nil)
+//         }
         
         
         
@@ -172,7 +172,8 @@ class MasterTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
 
             self.ymsesapprovalsrvEntitiesOffline.download { error in
                 guard error == nil else {
-                    let queryOff = DataQuery().selectAll().top(20)
+                    let queryOff = DataQuery().selectAll()
+                    print(queryOff)
                     self.ymsesapprovalsrvEntitiesOffline.fetchYMSESIOSAPPROVESet(matching: queryOff) { products, error in
                         guard let products = products else {
                             completionHandler(error!)
@@ -180,14 +181,15 @@ class MasterTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
                             return
                         }
                         self.entities = products
+                        print(products)
                         completionHandler(nil)
                         self.closeOfflineStore()
                     }
                     return
                 }
 
-                var queryOn = DataQuery().selectAll().top(20)
-                query = query.expand(YmSesIosApprove.headToItems)
+                let queryOn = DataQuery().selectAll()
+                //query = query.expand(YmSesIosApprove.headToItems)
                 self.ymsesapprovalsrvEntities.fetchYMSESIOSAPPROVESet(matching: queryOn) { yMSESIOSAPPROVESet, error in
                     guard let yMSESIOSAPPROVESet = yMSESIOSAPPROVESet else {
                         completionHandler(error!)
