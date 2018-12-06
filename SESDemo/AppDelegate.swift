@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     private(set) var isOfflineStoreOpened = false
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        Logger.root.logLevel = .debug
+        
+        
         // Set a FUIInfoViewController as the rootViewController, since there it is none set in the Main.storyboard
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window!.rootViewController = FUIInfoViewController.createSplashScreenInstanceFromStoryboard()
@@ -178,6 +182,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         if onboarding {
             do {
+               
+                
+                
                 // Although it is not the best practice, we are defining this query limit as top=20.
                 // If the service supports paging, then paging should be used instead of top!
 //                try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSCREATESet.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSCREATESet), automaticallyRetrievesStreams: false))
@@ -185,7 +192,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 //                try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSVIEWSet.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSVIEWSet).selectAll().top(20), automaticallyRetrievesStreams: false))
 //                try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet).selectAll().top(20), automaticallyRetrievesStreams: false))
 //                try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.notificationCollection.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.notificationCollection).selectAll().top(20), automaticallyRetrievesStreams: false))
-//                try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.subscriptionCollection.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.subscriptionCollection).selectAll().top(20), automaticallyRetrievesStreams: false))
+////                try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.subscriptionCollection.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.subscriptionCollection).selectAll().top(20), automaticallyRetrievesStreams: false))
+//                 try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet).selectAll(), automaticallyRetrievesStreams: false))
                 try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet).selectAll(), automaticallyRetrievesStreams: false))
                 
             } catch {
@@ -194,6 +202,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         self.ymsesapprovalsrvEntities = YMSESAPPROVALSRVEntities(provider: offlineODataProvider)
         self.ymsesapprovalsrvEntitiesOnline = YMSESAPPROVALSRVEntities(provider: onlineODataProvider)
+//
+//        DispatchQueue.global().async {
+//            let qquery = DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet).withKey(YmSesIosApprove.key(lblni: "1001948388"))
+//            print(qquery)
+//            do{
+//                self.ymsesapprovalsrvEntitiesOnline.provider.traceRequests = true
+//                self.ymsesapprovalsrvEntitiesOnline.provider.traceWithData = true
+//                self.ymsesapprovalsrvEntitiesOnline.provider.prettyTracing = true
+//                var res = try self.ymsesapprovalsrvEntitiesOnline.executeQuery(qquery)
+//                print(res)
+//                print("end")
+//            } catch {
+//                self.logger.error("Failed to add defining query for Offline Store initialization", error: error)
+//            }
+//
+//        }
     }
 
     fileprivate func showOfflineODataError(_ error: OfflineODataError, message: String) {
@@ -293,6 +317,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func connectionEstablished() {
         // connection established
+        print("internet is back")
     }
 
     func connectionChanged(_ previousReachabilityType: ReachabilityType, reachabilityType _: ReachabilityType) {
@@ -300,6 +325,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         if case previousReachabilityType = ReachabilityType.offline {
             // connection established
             OnboardingManager.shared.restoreForSyncing()
+            self.performOfflineRefresh()
         }
     }
 
@@ -360,5 +386,6 @@ class OfflineODataDelegateSample: OfflineODataDelegate {
     public func offlineODataProvider(_: OfflineODataProvider, stateDidChange newState: OfflineODataStoreState) {
         let stateString = storeState2String(newState)
         self.logger.debug("stateChanged: \(stateString)")
+        print(stateString)
     }
 }

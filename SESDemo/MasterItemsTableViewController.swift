@@ -35,6 +35,8 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
         return self.appDelegate.ymsesapprovalsrvEntities
     }
     
+  
+    
     private var isStoreOpened = false
     var SeS: YmSesIosApprove?
     var tableUpdater: EntitySetUpdaterDelegate?
@@ -146,10 +148,52 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
             
             self.isStoreOpened = true
             
+            
+            //create local database for ITEMS
+            //self.ymsesapprovalsrvEntitiesOffline.
+//            var offlineODataProvider = OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet.localName, query: DataQuery().withKey(YmSesIosApprove.key(lblni: self.SeS?.lblni!)), automaticallyRetrievesStreams: false)
+            //DataQuery().withKey(YmSesIosApprove.key(lblni: self.SeS?.lblni!))
+            //            let qquery = DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet).withKey(YmSesIosApprove.key(lblni: "1001948388"))
+
+            
+            let lblniVar = self.SeS?.lblni!
+            var queryOff = DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet).withKey(YmSesIosApprove.key(lblni: lblniVar))
+            print(queryOff.url)
+
+
+            queryOff = queryOff.expand(YmSesIosApprove.headToItems)
+
+            
+            print(lblniVar)
+//            let qquery = DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet).withKey(YmSesIosApprove.key(lblni: lblniVar))
+            do{
+               //self.ymsesapprovalsrvEntitiesOffline.createEntity(<#T##entity: EntityValue##EntityValue#>)
+                try self.ymsesapprovalsrvEntitiesOffline.provider.add(definingQuery:
+                    OfflineODataDefiningQuery(
+                    name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet.localName,
+                    query: queryOff, automaticallyRetrievesStreams: false))
+
+            } catch {
+                print("error")
+                print(error)
+                self.logger.error("Failed to add defining query for Offline Store initialization", error: error)
+            }
+            print(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet.localName)
+            print(DataQuery().withKey(YmSesIosApprove.key(lblni: lblniVar)).expand(YmSesIosApprove.headToItems))
+            
+            self.downloadOfflineStore()
+            
+        
+            
+//
+//            self.ymsesapprovalsrvEntitiesOffline.get = YMSESAPPROVALSRVEntities(provider: offlineODataProvider)
+//
+            //////
             self.ymsesapprovalsrvEntitiesOffline.download { error in
                 guard error == nil else {
                     var queryOff = DataQuery().withKey(YmSesIosApprove.key(lblni: self.SeS?.lblni!))
                     queryOff = queryOff.expand(YmSesIosApprove.headToItems)
+                    //var queryOff = DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet).selectAll()
                     print(queryOff)
                     self.ymsesapprovalsrvEntitiesOffline.fetchYMSESIOSAPPROVESet(matching: queryOff) { products, error in
                         guard let products = products else {
@@ -158,8 +202,8 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
                             return
                         }
                         self.entities2 = products
-                        print (self.entities2.first)
-                        print (self.entities2.first?.headToItems)
+//                        print (self.entities2.first)
+//                        print (self.entities2.first?.headToItems)
                         self.entities = (self.entities2.first?.headToItems)!
                         print(self.entities)
                         completionHandler(nil)
@@ -177,8 +221,8 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
                         return
                     }
                     self.entities2 = yMSESIOSAPPROVESet
-                    print (self.entities2.first)
-                    print (self.entities2.first?.headToItems)
+//                    print (self.entities2.first)
+//                    print (self.entities2.first?.headToItems)
                     self.entities = (self.entities2.first?.headToItems)!
                     
                     completionHandler(nil)
@@ -252,5 +296,22 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
             }
         })
     }
+    
+    private func downloadOfflineStore() {
+        if !self.isStoreOpened {
+            self.logger.error("Offline Store still closed")
+            return
+        }
+        // the download function updates the client’s offline store from the backend.
+        self.ymsesapprovalsrvEntitiesOffline.download { error in
+            if let error = error {
+                self.logger.error("Offline Store download failed.", error: error)
+            } else {
+                self.logger.info("Offline Store is downloaded.")
+            }
+        }
+    }
+
+    
 }
 

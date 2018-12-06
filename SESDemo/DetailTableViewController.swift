@@ -26,6 +26,7 @@ class DetailTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
     private var ymsesapprovalsrvEntitiesOffline:  YMSESAPPROVALSRVEntities<OfflineODataProvider> {
         return self.appDelegate.ymsesapprovalsrvEntities
     }
+    private var isStoreOpened = false
     
     @IBOutlet weak var approveButton: UIButton!
     
@@ -104,41 +105,125 @@ class DetailTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
         self.view.endEditing(true)
         self.logger.info("Updating entity in backend.")
         
+        // MARK: Offline update
         
-// MARK: Online update
-        self.ymsesapprovalsrvEntities.updateEntity(self.entity) { error in  //pushing updated flag into the DB
-        self.hideFioriLoadingIndicator()
-        if let error = error {
-            self.logger.error("Update entry failed. Error: \(error)", error: error)
-                let alertController = UIAlertController(title: NSLocalizedString("keyErrorEntityUpdateTitle", value: "Update entry failed", comment: "XTIT: Title of alert message about entity update failure."), message: error.localizedDescription, preferredStyle: .alert)
-                alertController.addAction(UIAlertAction(title: self.okTitle, style: .default))
-                OperationQueue.main.addOperation({
-                    // Present the alertController
-                    self.present(alertController, animated: true)
-                })
-                return
+        ymsesapprovalsrvEntitiesOffline.open { error in
+            guard error == nil else {
+                return;
             }
-            self.logger.info("Update entry finished successfully.")
-//            FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Updated", comment: "XTIT: Title of alert       message about successful         entity update."))
+            
+            self.isStoreOpened = true
+            
+            self.ymsesapprovalsrvEntitiesOffline.download { error in
+                guard error == nil else {
                     
-            //self.tableUpdater?.updateTable() //querying for the current state of data
-            //self.tableUpdater?.entitySetHasChanged()
-            self.entityUpdater?.entityHasChanged(self._entity)
+                    self.ymsesapprovalsrvEntitiesOffline.updateEntity(self.entity) { error in  //pushing updated flag into the DB
+                        self.hideFioriLoadingIndicator()
+                        if let error = error {
+                            self.logger.error("Update entry failed. Error: \(error)", error: error)
+                            let alertController = UIAlertController(title: NSLocalizedString("keyErrorEntityUpdateTitle", value: "Update entry failed", comment: "XTIT: Title of alert message about entity update failure."), message: error.localizedDescription, preferredStyle: .alert)
+                            alertController.addAction(UIAlertAction(title: self.okTitle, style: .default))
+                            OperationQueue.main.addOperation({
+                                // Present the alertController
+                                self.present(alertController, animated: true)
+                            })
+                            return
+                        }
+                        self.logger.info("Update entry finished successfully.")
+                        self.entityUpdater?.entityHasChanged(self._entity)
+                        self.closeOfflineStore()
+                        
+                        //bcust
+                        switch self._entity?.appFlag {
+                        case "A"?:
+                            return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Approved", comment: "XTIT: Title of alert message about successful entity update."))
+                        case "B"?:
+                            return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Blocked", comment: "XTIT: Title of alert message about successful entity update."))
+                        case "U"?:
+                            return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Unblocked", comment: "XTIT: Title of alert message about successful entity update."))
+                        case "D"?:
+                            return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Deleted", comment: "XTIT: Title of alert message about successful entity update."))
+                        default:
+                            return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Something went wrong", comment: "XTIT: Title of alert message about successful entity update."))
+                        }
+                        
+                       
+                    }
+                  
                     
-            //bcust
-            switch self._entity?.appFlag {
-            case "A"?:
-                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Approved", comment: "XTIT: Title of alert message about successful entity update."))
-            case "B"?:
-                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Blocked", comment: "XTIT: Title of alert message about successful entity update."))
-            case "U"?:
-                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Unblocked", comment: "XTIT: Title of alert message about successful entity update."))
-            case "D"?:
-                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Deleted", comment: "XTIT: Title of alert message about successful entity update."))
-            default:
-                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Something went wrong", comment: "XTIT: Title of alert message about successful entity update."))
+                    return
+                }
+                // MARK: Online
+                
+                self.ymsesapprovalsrvEntities.updateEntity(self.entity) { error in  //pushing updated flag into the DB
+                    self.hideFioriLoadingIndicator()
+                    if let error = error {
+                        self.logger.error("Update entry failed. Error: \(error)", error: error)
+                        let alertController = UIAlertController(title: NSLocalizedString("keyErrorEntityUpdateTitle", value: "Update entry failed", comment: "XTIT: Title of alert message about entity update failure."), message: error.localizedDescription, preferredStyle: .alert)
+                        alertController.addAction(UIAlertAction(title: self.okTitle, style: .default))
+                        OperationQueue.main.addOperation({
+                            // Present the alertController
+                            self.present(alertController, animated: true)
+                        })
+                        return
+                    }
+                    self.logger.info("Update entry finished successfully.")
+                    self.entityUpdater?.entityHasChanged(self._entity)
+                    
+                    //bcust
+                    switch self._entity?.appFlag {
+                    case "A"?:
+                        return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Approved", comment: "XTIT: Title of alert message about successful entity update."))
+                    case "B"?:
+                        return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Blocked", comment: "XTIT: Title of alert message about successful entity update."))
+                    case "U"?:
+                        return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Unblocked", comment: "XTIT: Title of alert message about successful entity update."))
+                    case "D"?:
+                        return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Deleted", comment: "XTIT: Title of alert message about successful entity update."))
+                    default:
+                        return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Something went wrong", comment: "XTIT: Title of alert message about successful entity update."))
+                    }
+                }
             }
         }
+        
+       
+        
+        
+// MARK: Online update
+//        self.ymsesapprovalsrvEntities.updateEntity(self.entity) { error in  //pushing updated flag into the DB
+//        self.hideFioriLoadingIndicator()
+//        if let error = error {
+//            self.logger.error("Update entry failed. Error: \(error)", error: error)
+//                let alertController = UIAlertController(title: NSLocalizedString("keyErrorEntityUpdateTitle", value: "Update entry failed", comment: "XTIT: Title of alert message about entity update failure."), message: error.localizedDescription, preferredStyle: .alert)
+//                alertController.addAction(UIAlertAction(title: self.okTitle, style: .default))
+//                OperationQueue.main.addOperation({
+//                    // Present the alertController
+//                    self.present(alertController, animated: true)
+//                })
+//                return
+//            }
+//            self.logger.info("Update entry finished successfully.")
+////            FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Updated", comment: "XTIT: Title of alert       message about successful         entity update."))
+//
+//            //self.tableUpdater?.updateTable() //querying for the current state of data
+//            //self.tableUpdater?.entitySetHasChanged()
+//            self.entityUpdater?.entityHasChanged(self._entity)
+//
+//            //bcust
+//            switch self._entity?.appFlag {
+//            case "A"?:
+//                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Approved", comment: "XTIT: Title of alert message about successful entity update."))
+//            case "B"?:
+//                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Blocked", comment: "XTIT: Title of alert message about successful entity update."))
+//            case "U"?:
+//                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Unblocked", comment: "XTIT: Title of alert message about successful entity update."))
+//            case "D"?:
+//                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Deleted", comment: "XTIT: Title of alert message about successful entity update."))
+//            default:
+//                return FUIToastMessage.show(message: NSLocalizedString("keyUpdateEntityFinishedTitle", value: "Something went wrong", comment: "XTIT: Title of alert message about successful entity update."))
+//            }
+//        }
 
     }
     
@@ -591,5 +676,18 @@ class DetailTableViewController: FUIFormTableViewController, SAPFioriLoadingIndi
             itemsViewController.SeS = selectedEntity
         }
     }
+    
+    func closeOfflineStore() {
+        if isStoreOpened {
+            do {
+                try ymsesapprovalsrvEntitiesOffline.close()
+                isStoreOpened = false
+            } catch {
+                logger.error("Offline Store closing failed")
+            }
+        }
+        logger.info("Offline Store closed")
+    }
+
 
 }
