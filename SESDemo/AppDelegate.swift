@@ -200,6 +200,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
                 self.logger.error("Failed to add defining query for Offline Store initialization", error: error)
             }
         }
+        
+        //TEMPPPPPP
+        
+      
+//        do{
+//         try offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet.localName, query: DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSAPPROVESet).selectAll(), automaticallyRetrievesStreams: false))
+//        }
+//        catch{
+//            
+//        }
         self.ymsesapprovalsrvEntities = YMSESAPPROVALSRVEntities(provider: offlineODataProvider)
         self.ymsesapprovalsrvEntitiesOnline = YMSESAPPROVALSRVEntities(provider: onlineODataProvider)
 //
@@ -306,9 +316,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // the upload function updates the backend from the client’s offline store.
         self.ymsesapprovalsrvEntities.upload { error in
             if let error = error {
+                print("Upoload failed")
                 self.logger.error("Offline Store upload failed.", error: error)
                 return
             }
+            print("uploaded")
             self.logger.info("Offline Store is uploaded.")
         }
     }
@@ -318,14 +330,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func connectionEstablished() {
         // connection established
         print("internet is back")
+//        self.isOfflineStoreOpened = false
+        self.openOfflineStore(onboarding: false)
+        self.isOfflineStoreOpened = false
+        //self.performOfflineRefresh()
     }
 
     func connectionChanged(_ previousReachabilityType: ReachabilityType, reachabilityType _: ReachabilityType) {
         // connection changed
         if case previousReachabilityType = ReachabilityType.offline {
             // connection established
-            OnboardingManager.shared.restoreForSyncing()
-            self.performOfflineRefresh()
+            //OnboardingManager.shared.restoreForSyncing()
+            
         }
     }
 

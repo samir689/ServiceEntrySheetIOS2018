@@ -166,18 +166,18 @@ class MasterItemsTableViewController: FUIFormTableViewController, SAPFioriLoadin
             
             print(lblniVar)
 //            let qquery = DataQuery().from(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet).withKey(YmSesIosApprove.key(lblni: lblniVar))
-            do{
-               //self.ymsesapprovalsrvEntitiesOffline.createEntity(<#T##entity: EntityValue##EntityValue#>)
-                try self.ymsesapprovalsrvEntitiesOffline.provider.add(definingQuery:
-                    OfflineODataDefiningQuery(
-                    name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet.localName,
-                    query: queryOff, automaticallyRetrievesStreams: false))
-
-            } catch {
-                print("error")
-                print(error)
-                self.logger.error("Failed to add defining query for Offline Store initialization", error: error)
-            }
+//            do{
+//               //self.ymsesapprovalsrvEntitiesOffline.createEntity(<#T##entity: EntityValue##EntityValue#>)
+//                try self.ymsesapprovalsrvEntitiesOffline.provider.add(definingQuery:
+//                    OfflineODataDefiningQuery(
+//                    name: YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet.localName,
+//                    query: queryOff, automaticallyRetrievesStreams: false))
+//
+//            } catch {
+//                print("error")
+//                print(error)
+//                self.logger.error("Failed to add defining query for Offline Store initialization", error: error)
+//            }
             print(YMSESAPPROVALSRVEntitiesMetadata.EntitySets.ymSESIOSITEMSSet.localName)
             print(DataQuery().withKey(YmSesIosApprove.key(lblni: lblniVar)).expand(YmSesIosApprove.headToItems))
             

@@ -21,8 +21,14 @@ class CreateViewController: UIViewController, SAPFioriLoadingIndicator {
     private var ymsesapprovalsrvEntities: YMSESAPPROVALSRVEntities<OnlineODataProvider> {
         return self.appDelegate.ymsesapprovalsrvEntitiesOnline
     }
-    
+    // MARK: Offline provider and delegate
+    private var ymsesapprovalsrvEntitiesOffline:  YMSESAPPROVALSRVEntities<OfflineODataProvider> {
+        return self.appDelegate.ymsesapprovalsrvEntities
+    }
+    private var isStoreOpened = false
+    private let logger = Logger.shared(named: "YMSESIOSAPPROVESetMasterViewControllerLogger")
     private var entity: YmSesIosCreate = YmSesIosCreate()
+    
     
     @IBOutlet weak var txt_ponum: UITextField!
     @IBOutlet weak var txt_poitem: UITextField!
@@ -41,16 +47,51 @@ class CreateViewController: UIViewController, SAPFioriLoadingIndicator {
             
             self.showFioriLoadingIndicator()
             self.view.endEditing(true)
-            self.ymsesapprovalsrvEntities.createEntity(self.entity) { error in  //pushing updated flag into the DB
-                self.hideFioriLoadingIndicator()
-                if let error = error {
-                    let alertController = UIAlertController(title: NSLocalizedString("keyErrorEntityUpdateTitle", value: "Update entry failed", comment: "XTIT: Title of alert message about entity update failure."), message: error.localizedDescription, preferredStyle: .alert)
-                    OperationQueue.main.addOperation({
-                        self.present(alertController, animated: true)
-                    })
-                    return
+            
+            ymsesapprovalsrvEntitiesOffline.open { error in
+                guard error == nil else {
+                    return;
                 }
-        }
+                
+                self.isStoreOpened = true
+                
+                self.ymsesapprovalsrvEntitiesOffline.download { error in
+                    guard error == nil else {
+                       
+                        // MARK: Offline call
+                        
+                        self.ymsesapprovalsrvEntitiesOffline.createEntity(self.entity) { error in  //pushing updated flag into the DB
+                            self.hideFioriLoadingIndicator()
+                            if let error = error {
+                                let alertController = UIAlertController(title: NSLocalizedString("keyErrorEntityUpdateTitle", value: "Update entry failed", comment: "XTIT: Title of alert message about entity update failure."), message: error.localizedDescription, preferredStyle: .alert)
+                                OperationQueue.main.addOperation({
+                                    self.present(alertController, animated: true)
+                                })
+                                
+                                self.closeOfflineStore()
+                                return
+                            }
+                        }
+                        
+                        return
+                    }
+                    
+                    // MARK: Online call
+                    
+                    self.ymsesapprovalsrvEntities.createEntity(self.entity) { error in  //pushing updated flag into the DB
+                        self.hideFioriLoadingIndicator()
+                        if let error = error {
+                            let alertController = UIAlertController(title: NSLocalizedString("keyErrorEntityUpdateTitle", value: "Update entry failed", comment: "XTIT: Title of alert message about entity update failure."), message: error.localizedDescription, preferredStyle: .alert)
+                            OperationQueue.main.addOperation({
+                                self.present(alertController, animated: true)
+                            })
+                            return
+                        }
+                    }
+                    
+                }
+            }
+            
     }
     
     func viewDidLoad() {
@@ -62,6 +103,8 @@ class CreateViewController: UIViewController, SAPFioriLoadingIndicator {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+        
+        
     
 
     /*
@@ -73,5 +116,18 @@ class CreateViewController: UIViewController, SAPFioriLoadingIndicator {
         // Pass the selected object to the new view controller.
     }
     */
+    }
+    
+    // MARK: Offline store
+    func closeOfflineStore() {
+        if isStoreOpened {
+            do {
+                try ymsesapprovalsrvEntitiesOffline.close()
+                isStoreOpened = false
+            } catch {
+                logger.error("Offline Store closing failed")
+            }
+        }
+        logger.info("Offline Store closed")
     }
 }
