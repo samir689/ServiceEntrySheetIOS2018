@@ -330,7 +330,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func connectionEstablished() {
         // connection established
         print("internet is back")
-//        self.isOfflineStoreOpened = false
+        self.isOfflineStoreOpened = false
         self.openOfflineStore(onboarding: false)
         self.isOfflineStoreOpened = false
         //self.performOfflineRefresh()
